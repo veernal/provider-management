@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "1822fc5d-c6ea-47b2-9700-b8f840f4adae",
+		"name": "PROVIDER-MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"veernal\",\r\n    \"lastName\":\"verma\",\r\n    \"password\":\"verma@1\",\r\n    \"address\":\"bangalore\",\r\n    \"emailId\":\"verma@org.com\",\r\n    \"contactNo\":9678543216,\r\n    \"dob\":\"2012-03-12\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/businessUser/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"businessUser",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login business user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"veernal1203\",\r\n    \"password\":\"verma@1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/businessUser/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"businessUser",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProvider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"akanksha\",\r\n    \"middleName\": \"\",\r\n    \"lastName\": \"verma\",\r\n    \"dob\": \"1997-07-30\",\r\n    \"gender\": \"female\",\r\n    \"userId\":\"veernal1203\",\r\n    \"businessUserId\":1,\r\n    \"dba\": \"speciality care\",\r\n    \"classification\": \"physician\",\r\n    \"providerType\": \"PhysGroup\",\r\n    \"speciality\": \"physiotherapy\",\r\n    \"active\": \"yes\",\r\n    \"address\": {\r\n        \"addressType\":\"office\",\r\n        \"streetAddress\":\"4th cross road,Gandhinagar\",\r\n        \"city\":\"pune\",\r\n        \"state\":\"maharashtra\",\r\n        \"zip\":\"653526\"\r\n    },\r\n    \"license\": {\r\n        \"licenseNumber\":65673721,\r\n        \"licenseType\":\"Licensure\",\r\n        \"agency\":\"educatior\",\r\n        \"effectiveDate\":\"2000-09-08\",\r\n        \"licenseVerified\":true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/1/addProvider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"1",
+						"addProvider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/getAllProviders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"getAllProviders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Provider",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"veena\",\r\n    \"middleName\": \"\",\r\n    \"lastName\": \"verma\",\r\n    \"dob\": \"2023-02-13\",\r\n    \"gender\": \"Female\",\r\n    \"dba\": \"speciality care\",\r\n    \"classification\": \"Physician\",\r\n    \"providerType\": \"PhysGroup\",\r\n    \"speciality\": \"physiotherapy\",\r\n    \"active\": \"no\",\r\n    \"userId\": \"\",\r\n    \"businessUserId\": 1,\r\n    \"address\": {\r\n        \"id\": 1,\r\n        \"addressType\": \"office\",\r\n        \"streetAddress\": \"143, main street\",\r\n        \"city\": \"bangalore\",\r\n        \"state\": \"karnataka\",\r\n        \"zip\": \"560097\"\r\n    },\r\n    \"license\": {\r\n        \"id\": 1,\r\n        \"licenseNumber\": 546234623,\r\n        \"licenseType\": \"Licensure\",\r\n        \"agency\": \"educatior\",\r\n        \"effectiveDate\": \"2023-06-01\",\r\n        \"licenseVerified\": \"yes\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/vansh0901/updateProvider/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"vansh0901",
+						"updateProvider",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search Providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/search?keyword=akan&anotherKeyword=pun&classification=physician&gender=female&active=yes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "akan"
+						},
+						{
+							"key": "anotherKeyword",
+							"value": "pun"
+						},
+						{
+							"key": "classification",
+							"value": "physician"
+						},
+						{
+							"key": "gender",
+							"value": "female"
+						},
+						{
+							"key": "active",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Address",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"addressType\": \"office\",\r\n        \"streetAddress\": \"4th cross road,Gandhinagar\",\r\n        \"city\": \"bangalore\",\r\n        \"state\": \"karnataka\",\r\n        \"zip\": \"560097\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/updateAddress/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"updateAddress",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/provider-management/provider/deleteProvider/veernal1203/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"provider-management",
+						"provider",
+						"deleteProvider",
+						"veernal1203",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
