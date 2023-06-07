@@ -1,0 +1,31 @@
+<body>
+    <h1 align="center">Update Provider</h1>
+<div class="firstdiv">
+    <label for="name"><b>Enter UserId</b></label><br>
+    <input type="text" name="UserId" [(ngModel)]="provider.userId"><br><br> 
+    <label for="name"><b>Enter Provider ID</b></label> <br>
+    <input type="number" name="providerId" [(ngModel)]="provider.id"><br><br>
+    <button type="button" class="btn btn-info" (click)="findProvider()">Get provider details</button>
+ </div><br>
+ <hr>
+  <div class="seconddiv">
+  <label class="form-label" for="form12">Last Name</label><br>
+    <input type="text" id="form12" class="form-control"  [(ngModel)]="provider.lastName"/><br><br>
+    <label class="form-label" for="form12">Active Status</label><br>
+    <input type="text" id="form12" class="form-control"  [(ngModel)]="provider.active"/><br><br>
+
+    <label class="form-label" for="classification">Classification</label><br>
+    <select [(ngModel)] ='provider.classification' type="text" id="classification" class="form-control"  style="width: 26.5%;"><br>
+        
+        <option>Hospital</option>
+        <option>Physician</option>
+        <option>Nursing Home</option>
+      </select><br><br>
+     
+    <label class="form-label" for="speciality">Speciality</label><br>
+    <input type="text" id="speciality" class="form-control"  [(ngModel)]="provider.speciality"/><br><br>
+    <button type="button" class="btn btn-info" (click)="update()">Save</button>
+
+   
+  </div>
+    </body>

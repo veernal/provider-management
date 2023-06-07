@@ -1,0 +1,43 @@
+<p>
+    <mat-toolbar>
+        <mat-icon>menu</mat-icon>
+      <span style="color: blueviolet;">Provider Management Portal</span>
+    </mat-toolbar>
+  </p>
+  
+  <div class="login-page">
+  <div class="form">
+  <form class ="register" #loginform="ngForm" (ngSubmit)="login()">
+  
+      <div class="container">
+          
+          <label for="name"><b>Username(UserId)*</b></label>
+  
+          <input type="text" id="name" name="name"  
+  
+          class="form-control" required minlength="6" placeholder="Enter UserId"
+          [(ngModel)]="users.userId" #name="ngModel" >
+          <span class="text-danger" *ngIf="name.touched && name.errors?.['required']">
+          UserId should be same as received while registering.
+          </span>
+  
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="password" name="password" class="form-control"
+          required minlength="4" placeholder="Enter valid Password"
+          [(ngModel)]="users.password" #name="ngModel">
+          
+          <div *ngIf="name.errors?.['minlength']">
+            password must be at least 4 characters long.
+          </div>
+  
+          <button class="col-md-6" type="submit" class="btn btn-success" [disabled]="!loginform.valid">Login</button>
+  
+          <div>
+            <p style="font-weight: bold;">If New User? Please SignUp</p>
+          <button type="submit" class="btn btn-success" routerLink='/register'>SignUp</button>
+        </div>
+  
+      </div>
+  </form>
+  </div>
+  </div>

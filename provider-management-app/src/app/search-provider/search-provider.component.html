@@ -1,0 +1,99 @@
+<h3>Search Providers</h3>
+
+<div class="container">
+<form [formGroup]="searchForm">
+    
+    First Search By: <input 
+                #keyword
+                type="text" 
+                placeholder="Enter firstName, lastName or DBA" />
+                <br/>
+
+    Second Search By: <input 
+            #anotherKeyword
+            type="text" 
+            placeholder="Enter city, state or zip" />
+            <br/>
+
+    Classification: <select  #classification required name="classification">
+                <option disabled selected>Select classification</option>
+                <option>Hospital</option>
+                <option>Physician</option>
+                <option>Nursing Homes</option>
+            </select>
+
+    Gender: <select #gender required name="gender">
+        <option disabled selected>Select gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Others</option>
+    </select>
+                
+    
+    Active: <input 
+                #active
+                type="text" 
+                placeholder="Enter active" />
+                <br/>
+    
+    <input 
+        type="button"
+        value="Search"
+        (click)="findProvidersByParams(keyword.value, anotherKeyword.value, classification.value, gender.value, active.value)"
+        [disabled]="searchForm.invalid" />
+
+    <p *ngIf="searchForm.invalid">Error: Form is invalid</p>
+    
+</form>
+</div>
+
+
+<h3>Provider's that match your query : </h3>
+<table id="books" border="1">
+    <thead>
+            <td>Provider ID</td>
+
+            <td>First Name</td>
+
+            <td>Middle Name</td>
+
+            <td>Last Name</td>
+
+            <td>Gender</td>
+
+            <td>Classification</td>
+
+            <td>DBA (Doing Business As)</td>
+
+            <td>Provider Type</td>
+
+            <td>Speciality</td>
+
+            <td>City</td>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let provider of providers">
+    
+            <td>{{provider.id}}</td>
+    
+            <td>{{provider.firstName}}</td>
+    
+            <td>{{provider.middleName}}</td>
+    
+            <td>{{provider.lastName}}</td>
+    
+            <td>{{provider.gender}}</td>
+    
+            <td>{{provider.classification}}</td>
+    
+            <td>{{provider.dba}}</td>
+    
+            <td>{{provider.providerType}}</td>
+    
+            <td>{{provider.speciality}}</td>
+    
+            <td>{{provider.address.city}}</td>
+    
+          </tr>
+    </tbody>
+</table>

@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="add-provider.component.scss">
+
+
+</head>
+<body>
+    <div class="container">
+        <header>Add Provider</header>
+
+        <form id="form_registration" action="assessment1_thankyou.html">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Provider's Details</span>
+
+                    <div class="fields">
+
+                      <div class="input-field">
+                        <label>Business User Id</label>
+                        <input type="number" name="businessUserId" [(ngModel)]="provider.businessUserId" placeholder="Enter id" required>
+                        <p></p>
+                    </div>
+                    
+
+                    <div class="input-field">
+                        <label>User Id</label>
+                        <input type="text" name="UserId" [(ngModel)]="provider.userId" placeholder="Enter userId" required>
+                        <p></p>
+                    </div>
+
+                      
+                        <div class="input-field">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" [(ngModel)]="provider.firstName" placeholder="Enter First Name" required>
+                            <p></p>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="middleName">First Name</label>
+                            <input type="text" id="middleName" name="middleName" [(ngModel)]="provider.middleName" placeholder="Enter Middle Name" required>
+                            <p></p>
+                        </div>
+
+                      <div class="input-field">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" [(ngModel)]="provider.lastName" placeholder="Enter Last Name" required>
+                        <p></p>
+                    </div>
+
+                    <div class="input-field">
+                      <label>DBA (Doing Business As)</label>
+                      <input type="text" name="dba" [(ngModel)]="provider.dba" placeholder="Enter dba" required>
+                  </div>
+
+                  <div class="input-field">
+                    <label>Classification</label>
+                    <select required name="classification" [(ngModel)]="provider.classification">
+                        <option disabled selected>Select classification</option>
+                        <option>Hospital</option>
+                        <option>Physician</option>
+                        <option>Nursing Homes</option>
+                    </select>
+                </div>
+
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" name="dob" [(ngModel)]="provider.dob" placeholder="Enter birth date" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>Provider Type</label>
+                          <input type="text" name="providerType" [(ngModel)]="provider.providerType" placeholder="Enter Provider Type" required>
+                      </div>
+
+                      <div class="input-field">
+                        <label>Speciality</label>
+                        <input type="text" name="Speciality" [(ngModel)]="provider.speciality" placeholder="Enter Speciality" required>
+                    </div>
+
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required name="gender" [(ngModel)]="provider.gender">
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                          <label>Active</label>
+                          <input type="text" name="active" [(ngModel)]="provider.active" placeholder="Active Status either yes/no" required>
+                      </div>
+
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Address & License Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Address Type</label>
+                            <input type="text" name="addressType" [(ngModel)]="provider.address.addressType" placeholder="Enter Address Type" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Street Address</label>
+                            <input type="text" name="streetAddress" [(ngModel)]="provider.address.streetAddress" placeholder="Enter Street Address" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>City</label>
+                            <input type="text" name="city" [(ngModel)]="provider.address.city" placeholder="Enter city" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>State</label>
+                            <input type="text" name="state" [(ngModel)]="provider.address.state" placeholder="Enter state" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Zip</label>
+                            <input type="text" name="zip" [(ngModel)]="provider.address.zip" placeholder="Enter zip/pincode" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>License Number</label>
+                          <input type="number" name="licenseNumber" [(ngModel)]="provider.license.licenseNumber" placeholder="Enter license number" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>License Type</label>
+                          <input type="text" name="licenseType" [(ngModel)]="provider.license.licenseType" placeholder="Enter license Type" required>
+                      </div>
+
+                      <div class="input-field">
+                        <label>Agency</label>
+                        <input type="text" name="agency" [(ngModel)]="provider.license.agency" placeholder="Enter agency" required>
+                    </div>
+
+                    <div class="input-field">
+                      <label>License Verified</label>
+                      <input type="text" name="licenseVerified" [(ngModel)]="provider.license.licenseVerified" placeholder="Enter license verified status" required>
+                  </div>
+
+                        <div class="input-field">
+                            <label>License Effective Date</label>
+                            <input type="date" name="effectiveDate" [(ngModel)]="provider.license.effectiveDate" placeholder="Enter Effective date" required>
+                        </div>
+                    </div>
+
+
+                    
+                  
+
+                    <button (click)='addProvider()'>ADD PROVIDER</button>
+                </div> 
+            </div>
+        
+</form>
+</div>
+</body>
+</html>

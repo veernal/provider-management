@@ -1,0 +1,84 @@
+
+<div class="container">
+    <form #registerform="ngForm" (ngSubmit)="register()">
+  
+    <h2>Registration Page</h2>
+
+    <label for="email"><b>EmailId*</b></label>
+
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+
+        class="form-control" required minlength="4" placeholder="Enter EmailId"
+        [(ngModel)]="users.emailId" #name="ngModel" >
+        <span class="text-danger" *ngIf="name.touched && name.errors?.['required']">
+        EmailId is required.
+        </span>
+        <span class="text-danger" *ngIf="name.errors?.['pattern']">
+        should contain email pattern.
+        </span><br>
+    
+
+    <label for="psw"><b>Password*</b></label>
+    <input type="password" id="password" name="password" class="form-control"
+        required minlength="4" placeholder="Enter valid Password"
+        [(ngModel)]="users.password" #namee="ngModel">
+    <span class="text-danger" *ngIf="namee.touched && namee.errors?.['required']">
+          password is required.
+    </span >
+    <span class="text-danger" *ngIf="namee.errors?.['minlength']">
+          password must be at least 4 characters long.
+    </span><br>
+
+    <label for="name"><b>FirstName*</b></label>
+      <input type="text" id="name" name="name" pattern="[a-zA-Z ]*" class="form-control"
+      required minlength="2" placeholder="Enter Firstname"
+      [(ngModel)]="users.firstName" #name="ngModel">
+       <span class="text-danger" *ngIf="namee.touched && name.errors?.['required']">
+        First Name is required.
+       </span> 
+       <span class="text-danger" *ngIf="name.errors?.['pattern']">
+        should contain only alphabets.
+        </span>
+      <span class="text-danger" *ngIf="name.errors?.['minlength']">
+        Name must be at least 2 characters long.
+      </span><br>
+
+      <label for="name"><b>LastName*</b></label>
+      <input type="text" id="name" name="name" pattern="[a-zA-Z ]*" class="form-control"
+      required minlength="2" placeholder="Enter Lastname"
+      [(ngModel)]="users.lastName" #name="ngModel" required>
+       <span class="text-danger" *ngIf="namee.touched && name.errors?.['required']">
+        Last Name is required.
+       </span> 
+       <span class="text-danger" *ngIf="name.errors?.['pattern']">
+        should contain only alphabets.
+        </span>
+      <span class="text-danger" *ngIf="name.errors?.['minlength']">
+        Name must be at least 2 characters long.
+      </span><br>
+
+    <label for="Address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address"  class="form-control" name="Address"  [(ngModel)]="users.address">
+      
+      
+    <label for="Phone"><b>Phone*</b></label>
+    <input type="tel" pattern="[0-9]{10}" placeholder="Enter Phone number" class="form-control" id="Phone" name="Phone" required minlength="10" [(ngModel)]="users.contactNo" #Phone="ngModel">
+    <span class="text-danger" *ngIf="Phone.touched && Phone.errors?.['required']">
+        Mobile number is required.
+    </span>
+    <span class="text-danger" *ngIf="Phone.errors?.['pattern']">
+          should contain only numbers.
+    </span>
+    <span *ngIf="Phone.errors?.['minlength']">
+        must be 10 characters long .
+    </span><br><br>
+
+    <label for="DOB"><b>DOB*</b></label>  
+    <input type="date" placeholder="Enter date of birth" class="form-control" name="DOB" required [(ngModel)]="users.dob" #DOB="ngModel"><br><br>   
+    
+
+    
+
+    <button type="submit">REGISTER</button>
+</form>
+</div>

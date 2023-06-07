@@ -1,0 +1,59 @@
+<h2 style="text-align: center;">PROVIDER'S LIST</h2>
+<table id="provider">
+    
+    <thead style="background-color:rgb(127, 197, 255)">
+
+        <td>Provider ID</td>
+
+        <td>First Name</td>
+
+        <td>Middle Name</td>
+
+        <td>Last Name</td>
+
+        <td>Gender</td>
+
+        <td>Classification</td>
+
+        <td>DBA (Doing Business As)</td>
+
+        <td>Provider Type</td>
+
+        <td>Speciality</td>
+
+        <td>City</td>
+
+        <td>Delete Inactive provider</td>
+
+
+    </thead>
+
+    <tr *ngFor ="let provider of providers">
+    
+        <td>{{provider.id}}</td>
+
+        <td>{{provider.firstName}}</td>
+
+        <td>{{provider.middleName}}</td>
+
+        <td>{{provider.lastName}}</td>
+
+        <td>{{provider.gender}}</td>
+
+        <td>{{provider.classification}}</td>
+
+        <td>{{provider.dba}}</td>
+
+        <td>{{provider.providerType}}</td>
+
+        <td>{{provider.speciality}}</td>
+
+        <td>{{provider.address.city}}</td>
+
+        <td> 
+            <button  mat-raised-button color="warn" [disabled]="deleteButton(provider)" value="DELETE"
+        (click) = "delete(provider)">DELETE</button></td>
+
+      </tr>
+
+</table>
